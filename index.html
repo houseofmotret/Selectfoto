@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Motret - Gallery</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #0c0c0c; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <iframe id="galleryFrame" src="">Loading...</iframe>
+
+    <script>
+        // --- GANTI URL DI BAWAH INI DENGAN LINK WEB APP GOOGLE LO ---
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzJawKWCgayrlbVmkvOFDyciQ5eKUQqUmCH3zzNm2muJkpyAK7sTjraORKya2vRbRqo/exec"; 
+        
+        window.onload = function() {
+            const params = window.location.search;
+            if (params) {
+                // Mengirim parameter ke Iframe
+                document.getElementById('galleryFrame').src = GOOGLE_SCRIPT_URL + params;
+            } else {
+                document.body.innerHTML = "<h2 style='color:white; text-align:center; margin-top:50px;'>Link Tidak Valid / Folder Tidak Ditemukan.</h2>";
+            }
+        };
+    </script>
+</body>
+</html>
